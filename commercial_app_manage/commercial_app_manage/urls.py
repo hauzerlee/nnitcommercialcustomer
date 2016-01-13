@@ -17,9 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from market_manage import views as market_manage_views
 
-
 urlpatterns = [
-
-    url(r'^login/',market_manage_views.login),
-    url(r'^main/',market_manage_views.main)
+    url(r'^$', market_manage_views.root),
+    url(r'^login/$', market_manage_views.login),
+    url(r'^main/$', market_manage_views.main)
 ]
