@@ -4,4 +4,4 @@ def login(request):
     return render(request, 'pages/login.html')
 
 def main(request):
-    return render(request, 'main.html')
+    return render(request, 'pages/main.html')
