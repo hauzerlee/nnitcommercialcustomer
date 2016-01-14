@@ -1,0 +1,18 @@
+{% extends 'pages/main.html' %}
+
+
+{% block content-subpage %}
+    {% if request.user.is_authenticated %}
+        {{ request.user.username }}，您好！
+    {% else %}
+        请登陆，这里放登陆链接
+    {% endif %}
+
+
+    <ul>
+        {% for person in persons %}
+            <li>{{ person.name }}:{{ person.age }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
