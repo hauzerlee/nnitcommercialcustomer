@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
-from market_manage import views as market_manage_views
+
+from market_manage.views import views_page  as vPage
 
 urlpatterns = [
-    url(r'^$', market_manage_views.root),
-    url(r'^login/$', market_manage_views.login),
-    url(r'^main/$', market_manage_views.main),
-    url(r'^user/$',market_manage_views.user)
+    url(r'^$', vPage.root),
+    url(r'^login/$', vPage.login),
+    url(r'^main/$', vPage.main),
+    url(r'^user/$', vPage.user)
 ]
