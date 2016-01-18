@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from market_manage.models.user import User
-
+from market_manage.models.userinfo import UserInfo
+# from market_manage.testmodels import  Person
 
 def root(request):
     return HttpResponseRedirect('login')
@@ -16,4 +16,4 @@ def main(request):
 
 
 def user(request):
-    return render(request, 'pages/modules/user/blankpage.html', {'persons': User.objects.all()})
+    return render(request, 'pages/modules/user/blankpage.html', {'persons': UserInfo.objects.all()})
