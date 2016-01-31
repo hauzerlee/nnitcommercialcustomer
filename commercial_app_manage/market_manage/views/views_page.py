@@ -14,7 +14,6 @@ def login(request):
     request.session['timenow'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
     return render(request, 'pages/login.html')
 
-
 def main(request):
     return render(request, 'pages/main.html')
 
@@ -22,3 +21,6 @@ def main(request):
 def user(request):
     return render(request, 'pages/modules/user/blankpage.html',
                   {'persons': UserInfo.objects.all(), 'nowtime': request.session['timenow'],'method':request.method})
+
+def userinfomanage(request):
+    return render(request, 'pages/modules/user/userinfomanage.html')

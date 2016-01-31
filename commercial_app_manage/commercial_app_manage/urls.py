@@ -21,8 +21,19 @@ urlpatterns = [
     url(r'^$', vPage.root),
     url(r'^login/$', vPage.login),
     url(r'^main/$', vPage.main),
-    url(r'^user/$', vPage.user),
-    url(r'^postmethod/$', vService.postmethod)
+
+    #usermanage
+    #url(r'^user/$', vPage.user),
+    url(r'^user/userinfomanage/$', vPage.userinfomanage),
+
+
+    #shopmanage
+
+
+
+    #mallmanage
+
+
 ]
 
 #server's methods
