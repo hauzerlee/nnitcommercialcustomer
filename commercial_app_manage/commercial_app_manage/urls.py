@@ -23,9 +23,8 @@ urlpatterns = [
     url(r'^main/$', vPage.main),
 
     #usermanage
-    #url(r'^user/$', vPage.user),
     url(r'^user/userinfomanage/$', vPage.userinfomanage),
-
+    url(r'^user/userintegralmanage/$', vPage.userintegralmanage),
 
     #shopmanage
 

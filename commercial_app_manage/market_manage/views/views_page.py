@@ -15,7 +15,7 @@ def login(request):
     return render(request, 'pages/login.html')
 
 def main(request):
-    return render(request, 'pages/main.html')
+    return render(request, 'pages/modules/dashboard/dashboard.html')
 
 
 def user(request):
@@ -24,3 +24,5 @@ def user(request):
 
 def userinfomanage(request):
     return render(request, 'pages/modules/user/userinfomanage.html')
+def userintegralmanage(request):
+    return render(request, 'pages/modules/user/userintegralmanage.html')
