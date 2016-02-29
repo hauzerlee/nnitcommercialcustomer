@@ -22,20 +22,21 @@ urlpatterns = [
     url(r'^login/$', vPage.login),
     url(r'^main/$', vPage.main),
 
-    #usermanage
+#proxy service
+     url(r'^proxyajax/$', vService.postmethod),
+
+    # usermanage
     url(r'^user/userinfomanage/$', vPage.userinfomanage),
     url(r'^user/userintegralmanage/$', vPage.userintegralmanage),
 
-    #shopmanage
+    # shopmanage
+    url(r'^shop/shopinfomanage/$', vPage.shopinfomanage),
 
-
-
-    #mallmanage
-
+    # mallmanage
 
 ]
 
-#server's methods
+# server's methods
 # urlpatterns.append([
 #
 #

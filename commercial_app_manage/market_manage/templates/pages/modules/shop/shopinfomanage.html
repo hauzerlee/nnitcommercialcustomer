@@ -1,0 +1,177 @@
+{% extends 'pages/main.html' %}
+
+{% block substyle %}
+
+
+{% endblock %}
+
+{% block subscript %}
+    <script>
+
+        $(function () {
+
+        })
+
+    </script>
+
+{% endblock %}
+
+{% block subcontent %}
+
+
+    <div class="container-fluid" style=" padding:0px; padding-top: 20px;">
+
+        <div id="div_filter">
+            <div class="row">
+                <div class="col-md-2">
+                    <input id="txt_shopname" class="form-control" type="text" placeholder="商户名"/>
+                </div>
+
+                <div class="col-md-3">
+                    <input id="btn_search" type="button" class="btn btn-info" style="width: 30%" value="查询"/>
+                </div>
+                <div class="col-md-3">
+                    <input id="btn_add" type="button" class="btn btn-default" value="新增" data-toggle="modal"
+                           data-target="#div_sub"/>
+                    <input id="btn_modify" type="button" class="btn btn-default" value="修改"/>
+                    <input if="btn_delete" type="button" class="btn btn-default" value="删除"/>
+                </div>
+            </div>
+        </div>
+
+        <div id="div_table" style="padding-top:20px">
+            <table class="table table-bordered" style="width: 1500px">
+                <thead>
+                <tr class="info">
+                    <th><input type="checkbox"></th>
+                    <th>商铺ID</th>
+                    <th>商铺名称</th>
+                    <th>商户所在楼层</th>
+                    <th>商铺的铺位号</th>
+                    <th>Logo</th>
+                    <th>实景图</th>
+                    <th>商铺电话</th>
+                    <th>店铺联系人</th>
+                    <th>联系人电话</th>
+                    <th>商户的简介</th>
+                    <th>类别</th>
+                    <th>创建时间</th>
+                    <th>开业时间</th>
+                    <th>对应管理员</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row"><input type="checkbox"></th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <div class="btn-group">
+                <button id="btn_previous" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+                <button id="btn_next" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="modal fade" role="dialog" id="div_sub">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">商户信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">商铺名称</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">楼层</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">铺位号</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">logo</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">实景图</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">商铺电话</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">店铺联系人</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">联系人电话</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">开业时间</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">对应管理员</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="control-label">简介</label>
+                                <textarea style="resize: none;height: 100px;" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

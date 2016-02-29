@@ -33,6 +33,9 @@
             });
 
             $("#wrapper").show();
+
+            //set height
+            $("#page-wrapper").height($(document).height() - 51);
         });
     </script>
 
@@ -319,7 +322,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 商户管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">商户信息管理</a>
+                                    <a href="/shop/shopinfomanage">商户信息管理</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">商户权限管理</a>
@@ -341,7 +344,7 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-        <div id="page-wrapper">
+        <div id="page-wrapper" style="overflow: auto;">
 
             {% block subcontent %}
 
