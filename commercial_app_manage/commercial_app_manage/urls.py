@@ -22,8 +22,9 @@ urlpatterns = [
     url(r'^login/$', vPage.login),
     url(r'^main/$', vPage.main),
 
-#proxy service
-     url(r'^proxyajax/$', vService.postmethod),
+    #proxy service
+     url(r'^proxyclient/$', vService.proxyclient),
+     url(r'^rest_test/$', vService.rest_test),
 
     # usermanage
     url(r'^user/userinfomanage/$', vPage.userinfomanage),

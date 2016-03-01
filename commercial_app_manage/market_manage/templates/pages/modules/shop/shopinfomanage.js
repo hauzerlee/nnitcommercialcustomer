@@ -7,6 +7,9 @@ $(function () {
     //search
     $("#btn_search").on("click", function () {
 
+        $.hgzo_ajax_async("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json", null, function (value) {
+            alert(value);
+        }, "get");
 
     })
 
