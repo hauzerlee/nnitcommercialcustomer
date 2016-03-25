@@ -1,0 +1,10 @@
+status: 200
+allow: GET, POST, HEAD, OPTIONS
+date: Thu, 17 Mar 2016 12:12:19 GMT
+content-location: http://172.16.3.175:8000/shop/?shop_name=test
+x-frame-options: SAMEORIGIN
+vary: Accept
+server: WSGIServer/0.2 CPython/3.5.1
+content-type: application/json
+
+{"count":2,"next":"http://172.16.3.175:8000/shop/?page=2&shop_name=test","previous":null,"results":[{"id":"En3J3urEX7aS7R2DvPJYP7","shop_name":"zhoudafu","floor":1,"location":"A4","logo":"zhoudafu.PNG","true_scene":"truescene.PNG","telephone":"123","contact":"test","contact_tel":"test","introduction":"test","category":"5zoApYk9BcC8CTeYnorUYR","opening_time":"2016-03-06T16:00:00Z","member":"ncGDPSQmj7xJN2PsfWADvb"}]}

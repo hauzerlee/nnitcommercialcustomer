@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from market_manage.models.userinfo import UserInfo
 import time
+from qiniu import Auth, put_file, etag, urlsafe_base64_encode
+import qiniu.config
 
 # from market_manage.testmodels import  Person
 
@@ -30,3 +32,8 @@ def userintegralmanage(request):
 #shop view
 def shopinfomanage(request):
     return render(request, 'pages/modules/shop/shopinfomanage.html')
+
+
+
+
+

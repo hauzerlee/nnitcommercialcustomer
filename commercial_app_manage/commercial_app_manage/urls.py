@@ -25,6 +25,7 @@ urlpatterns = [
     #proxy service
      url(r'^proxyclient/$', vService.proxyclient),
      url(r'^rest_test/$', vService.rest_test),
+     url(r'^imagetoken/$', vService.qiniuToken),
 
     # usermanage
     url(r'^user/userinfomanage/$', vPage.userinfomanage),

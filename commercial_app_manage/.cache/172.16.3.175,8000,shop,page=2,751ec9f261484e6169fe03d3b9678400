@@ -1,0 +1,10 @@
+status: 200
+allow: GET, POST, HEAD, OPTIONS
+date: Thu, 17 Mar 2016 12:11:36 GMT
+content-location: http://172.16.3.175:8000/shop/?page=2
+x-frame-options: SAMEORIGIN
+vary: Accept
+server: WSGIServer/0.2 CPython/3.5.1
+content-type: application/json
+
+{"count":2,"next":null,"previous":"http://172.16.3.175:8000/shop/","results":[{"id":"su5FVeUSnxChWqABgk56JN","shop_name":"test","floor":1,"location":"test","logo":"test","true_scene":"","telephone":"test","contact":"test","contact_tel":"test","introduction":"test","category":"5zoApYk9BcC8CTeYnorUYR","opening_time":"2016-03-30T16:00:00Z","member":"ncGDPSQmj7xJN2PsfWADvb"}]}

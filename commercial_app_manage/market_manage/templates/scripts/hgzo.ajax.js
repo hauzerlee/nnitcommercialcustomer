@@ -2,16 +2,25 @@
  * Created by Administrator on 2016/2/29.
  */
 
-$.hgzo_baseUrl = "http://www.baidu.com/"
+$.hgzo_baseUrl = "http://172.16.3.156:8000/"
 $.hgzo_timeout = 2000
-$.hgzo_ajax_proxy = "http://127.0.0.1:8000/proxyclient/"
+$.hgzo_ajax_proxy = "/proxyclient/"
 $.stringifyJSON = JSON.stringify
 $.extend({
 
-    hgzo_ajax_async: function (queryurl, urlparam, callback, type) {
+    hgzo_ajax_async: function (queryurl, urlparam, type, callback, errCallback) {
+        queryurl = $.hgzo_baseUrl + queryurl;
+
+        if (queryurl.lastIndexOf("/") != queryurl.length - 1 && queryurl.lastIndexOf("?") == -1)
+            queryurl += "/"
+
         var result = null; //结果数据
         var strurl = "";
         var data = {}; //上传参数
+
+        //type = type.toUpperCase();
+        //type == "GET" || type == "POST" || (type = "GET");
+
         if (type.toUpperCase() == "GET") {//get方式参数以url直接传参
             //遍历url参数转换成字符串
             for (var key in urlparam) {
@@ -30,7 +39,7 @@ $.extend({
 
         //创建GUID
         //开启等待
-        // var guid = $.showLoading();
+         var guid = $.hgzo_loading_show("正在加载数据,请稍后...");
         $.ajax({
             type: "POST",
             url: $.hgzo_ajax_proxy,
@@ -40,28 +49,25 @@ $.extend({
             dataType: "json", //服务器返回的数据类型
             cache: false, //设置为 false 将不缓存此页面
             error: function (xmlHttpRequest, textStatus, errorThrown) {
-                alert($.parseJSON(xmlHttpRequest.responseText).Message);
-                //$.hideLoading(guid);
-            },
-            success: function (json) {
-                try {
-                    if (json.d != "") {
 
-                        var jsonObj = $.parseJSON(json.d);
-                        if (typeof jsonObj == 'string') {
-                            callback($.parseJSON(eval(json.d)));
-                        }
-                        else {
-                            callback(jsonObj);
-                        }
-                    }
+
+                if (typeof errCallback == "function") {
+                    errCallback();
+                }
+                //alert($.parseJSON(xmlHttpRequest.responseText).Message);
+                $.hgzo_loading_hide();
+            },
+            success: function (json, xmlHttpRequest, textStatus) {
+                try {
+                    if (!json.d)
+                        callback(json);
                     else {
-                        callback(json.d);
+                        var jsonObj = $.parseJSON(json.d);
+                        typeof jsonObj == "string" ? callback($.parseJSON(eval(json.d))) : callback(jsonObj);
                     }
-                    //等待条关闭
                 }
                 finally {
-                    // $.hideLoading(guid);
+                   $.hgzo_loading_hide();
                 }
             }
         });
